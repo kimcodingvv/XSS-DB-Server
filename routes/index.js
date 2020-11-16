@@ -9,4 +9,9 @@ router.get('/', async function(req, res, next) {
   res.render('index', { infos: list });
 });
 
+router.get('/delete', async (req, res, next)=>{
+  await Info.remove({});
+  res.redirect('/');
+});
+
 module.exports = router;
